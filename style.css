@@ -1,0 +1,474 @@
+
+
+/* Улучшаем заголовки */
+.column h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f18585;
+    line-height: 1.3;
+    padding: 0 10px;
+}
+
+/* Улучшаем текст описания */
+.column p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Стили для контейнера аудиоплеера - верхняя полосочка */
+.audio-player-container {
+    margin-top: auto;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid rgba(241, 133, 133, 0.3);
+}
+
+
+
+/* Общие стили */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-attachment: fixed;
+    background-image: linear-gradient(#4a0f0c,#000000);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для шапки */
+header {
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    width: 130px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Стили для названия сайта */
+.site-title {
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+/* Анимация */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+nav a:hover {
+    color: #f18585;
+}
+
+/* Стили слайдера */
+.slider-container {
+  position: relative;
+  width: 80%;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+  
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+  
+.slider img {
+position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    min-width: 44px;
+    max-height: 24px;
+    max-width: 24px;
+    
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+    left: 15px;
+}
+
+.next-button {
+    right: 15px;
+}
+
+/* Стили текста о нас */
+.text_o_nas {
+    color: #fff;
+    width: 90%;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.text_o_nas h1 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Стили галереи */
+.column-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+/* Стили для каждой колонки */
+.column {
+    flex: 1;
+    min-width: 280px;
+    max-width: 100%;
+    padding: 20px;
+    border: 1px solid #f18585;
+    border-radius: 15px;
+    background: #2f0604;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 600px; /* Минимальная высота для всех карточек */
+}
+
+/* Исправляем отображение изображений */
+.pic {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: block;
+    cursor: pointer;
+    padding: 5px; /* Отступ внутри контейнера */
+}
+
+/* Улучшаем заголовки */
+.column h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f18585;
+}
+
+/* Улучшаем текст описания */
+.column p {
+    flex-grow: 1;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Стили для контейнера аудиоплеера */
+.audio-player-container {
+    margin-top: auto;
+    width: 100%;
+}
+
+.audio-title {
+    margin: 0 0 8px 0;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #f18585;
+}
+
+/* Улучшаем отображение аудио элемента */
+.audio-player-container audio {
+    width: 100%;
+    background: #30803500;
+    border-radius: 8px;
+    height: 40px;
+}
+
+/* Кастомизация аудиоплеера */
+audio::-webkit-media-controls-panel {
+    background-color: #333333;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: #a7401b;
+    border-radius: 50%;
+}
+
+/* Стили обратной связи */
+.obratnuj-zvonok {
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.form-zvonok {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.form-zvonok div {
+    padding: 15px 0;
+}
+
+.bot-send-mail {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.form-zvonok label, .form-zvonok input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-zvonok label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-zvonok input {
+    padding: 12px 15px;
+    margin-top: 10px;
+    color: #fff;
+    background-color: #333333;
+    border: 1px #a7401b solid;
+    border-radius: 5px;
+    font-size: 16px;
+    min-height: 44px;
+}
+
+.form-zvonok label span {
+    color: red;
+}
+
+
+
+
+
+/* Стили контактов */
+footer {
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.social-icons {
+    font-size: 12px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.social-icon:last-child {
+    margin-right: 0;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+/* Стили для контейнера полноэкранного изображения */
+#fullscreen-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    text-align: center;
+}
+
+#fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+
+/* Стили для кнопки закрытия */
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Стили для кнопки "Наверх" */
+#scrollToTopButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    padding: 12px 20px;
+    background-color: #333333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    min-height: 44px;
+    min-width: 44px;
+}
+
+#scrollToTopButton:hover {
+    color: #f18585;
+    background-color: #444444;
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .slider-container {
+width: 90%;
+        height: 250px !important; 
+    }
+
+    .prev-button, .next-button {
+    height: 24px;
+    width: 24px;
+    min-height: 24px;
+    min-width: 24px;
+    
+}
+}
+
+
